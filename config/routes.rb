@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
-  devise_for :users
-   resources :samples
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  # get 'omniauth_callbacks/Devise/omniauthCallbacks'
+  # devise_for :users
+  devise_for :users, :controllers => { :omniauth_callbacks => "omniauth_callbacks" }
+ resources :samples
+ root 'samples#index'
 end
